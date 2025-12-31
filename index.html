@@ -1,0 +1,532 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sai Karthik | Machine Learning Engineer</title>
+  <meta name="description" content="Professional portfolio of Sai Karthik, Machine Learning Engineer specializing in LLMs, RAG, and MLOps." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --bg-2: #eef1f5;
+      --text: #0d0f12;
+      --muted: #4d5661;
+      --line: #d9dee6;
+      --card: #ffffff;
+      --accent: #0c3b5e;
+      --accent-2: #2e6d8f;
+      --shadow: 0 24px 60px rgba(10, 20, 30, 0.12);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 10% -10%, #e6eef6 0%, transparent 60%),
+                  radial-gradient(900px 500px at 90% 0%, #eff3f8 0%, transparent 55%),
+                  linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0 48px;
+    }
+
+    .logo {
+      font-family: "Cormorant Garamond", "Times New Roman", serif;
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      border-color: var(--accent-2);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: 32px;
+      align-items: center;
+      padding: 32px 0 56px;
+    }
+
+    .hero-title {
+      font-family: "Cormorant Garamond", "Times New Roman", serif;
+      font-size: clamp(42px, 5vw, 70px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(12, 20, 30, 0.12);
+    }
+
+    .hero-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(10, 20, 30, 0.06);
+    }
+
+    .hero-card h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .hero-card .detail {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+
+    .hero-card .detail:last-child {
+      border-bottom: 0;
+    }
+
+    section {
+      margin-top: 60px;
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", "Times New Roman", serif;
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .section-lead {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 32px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 22px;
+      border: 1px solid rgba(10, 20, 30, 0.08);
+      box-shadow: 0 16px 36px rgba(12, 20, 30, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto -40% -40% auto;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(12, 59, 94, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      margin: 6px 6px 0 0;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 20px;
+    }
+
+    .timeline-item {
+      display: grid;
+      gap: 12px;
+      padding: 22px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid rgba(10, 20, 30, 0.08);
+      box-shadow: 0 16px 32px rgba(12, 20, 30, 0.08);
+    }
+
+    .timeline-header {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .timeline-role {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .timeline-meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline-list {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .timeline-list li {
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      margin-top: 70px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .fade-delay-1 { animation-delay: 0.1s; }
+    .fade-delay-2 { animation-delay: 0.2s; }
+    .fade-delay-3 { animation-delay: 0.3s; }
+    .fade-delay-4 { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-card {
+        padding: 18px;
+      }
+
+      .timeline-item {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <div class="logo">SAI KARTHIK</div>
+      <div class="nav-links">
+        <a href="#summary">Summary</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <div class="hero-title fade-in fade-delay-1">Machine Learning Engineer<br /><span>Generative AI and MLOps</span></div>
+        <p class="hero-subtitle fade-in fade-delay-2">
+          Results-driven AI and ML engineer with 4 years of experience building LLM-driven products, RAG systems,
+          and production-grade ML pipelines. Focused on delivering safe, scalable AI solutions across healthcare
+          and finance.
+        </p>
+        <div class="hero-actions fade-in fade-delay-3">
+          <a class="button primary" href="mailto:saikarthi.n@gmail.com">Email Me</a>
+          <a class="button" href="https://github.com/saikarthiknaladala" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button" href="#experience">View Experience</a>
+        </div>
+      </div>
+      <div class="hero-card fade-in fade-delay-4">
+        <h3>Profile</h3>
+        <div class="detail"><span>Location</span><span>Apex, NC</span></div>
+        <div class="detail"><span>Phone</span><span>+1 862 846 1817</span></div>
+        <div class="detail"><span>Email</span><span>saikarthi.n@gmail.com</span></div>
+        <div class="detail"><span>Expertise</span><span>LLMs, RAG, MLOps</span></div>
+      </div>
+    </section>
+
+    <section id="summary">
+      <div class="section-title">Summary</div>
+      <p class="section-lead">
+        I design and deploy end-to-end AI systems that move quickly from prototype to production. My work spans
+        LLM fine-tuning, retrieval systems, and scalable deployment pipelines with a clear focus on measurable
+        business impact. Recent projects include clinical Q and A assistants, insurance claims summarization, and
+        real-time fraud detection in banking.
+      </p>
+      <div class="grid two">
+        <div class="card">
+          <div class="tag">Core Strengths</div>
+          <p>
+            LLM orchestration, prompt engineering, and evaluation frameworks paired with strong foundations in
+            ML engineering and MLOps automation.
+          </p>
+        </div>
+        <div class="card">
+          <div class="tag">Industry Focus</div>
+          <p>
+            Healthcare and finance products where reliability, safety, and performance metrics are critical for
+            user trust and regulatory alignment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title">Skills</div>
+      <p class="section-lead">
+        Modern ML stacks with strong production orientation, from training and inference to deployment and monitoring.
+      </p>
+      <div class="grid three">
+        <div class="card">
+          <div class="tag">Programming and ML</div>
+          <div>
+            <span class="pill">Python</span>
+            <span class="pill">PyTorch</span>
+            <span class="pill">TensorFlow</span>
+            <span class="pill">PySpark</span>
+            <span class="pill">SQL</span>
+            <span class="pill">scikit-learn</span>
+            <span class="pill">OpenCV</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tag">GenAI and NLP</div>
+          <div>
+            <span class="pill">GPT-3.5 and GPT-4</span>
+            <span class="pill">LLaMA 2</span>
+            <span class="pill">Hugging Face</span>
+            <span class="pill">LangChain</span>
+            <span class="pill">LangGraph</span>
+            <span class="pill">RAG</span>
+            <span class="pill">Prompt Engineering</span>
+            <span class="pill">RLHF</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tag">MLOps and Cloud</div>
+          <div>
+            <span class="pill">Docker</span>
+            <span class="pill">Kubernetes</span>
+            <span class="pill">GitHub Actions</span>
+            <span class="pill">MLflow</span>
+            <span class="pill">FastAPI</span>
+            <span class="pill">AWS SageMaker</span>
+            <span class="pill">Terraform</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-title">Experience</div>
+      <p class="section-lead">
+        Impactful AI and ML delivery with quantifiable outcomes across healthcare, insurance, and finance.
+      </p>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div class="timeline-role">AI and ML Engineer</div>
+            <div class="timeline-meta">Health Care Service Corporation (HCSC) | Chicago, IL | Jun 2024 - Present</div>
+          </div>
+          <ul class="timeline-list">
+            <li>Built a RAG system with LangChain and Pinecone powering a clinical Q and A chatbot, reducing lookup time by 30 percent.</li>
+            <li>Fine-tuned LLMs on proprietary healthcare data to improve answer accuracy by 25 percent over baseline GPT-4 responses.</li>
+            <li>Implemented MLOps on AWS with Docker and CI/CD, enabling weekly model releases with zero downtime.</li>
+            <li>Optimized prompts and context injection, improving relevant response rate by 15 percent.</li>
+            <li>Created automated evaluation metrics for factuality and coherence to drive continuous model improvement.</li>
+            <li>Designed LangGraph workflows for multi-step agents supporting internal clinical use cases.</li>
+          </ul>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div class="timeline-role">ML Engineer</div>
+            <div class="timeline-meta">Reinsurance Group of America (RGA) | Chesterfield, MO | Jan 2024 - May 2024</div>
+          </div>
+          <ul class="timeline-list">
+            <li>Prototyped a generative model for claims summarization, reducing manual review time by 30 percent.</li>
+            <li>Integrated GPT-4 via API for a conversational risk analysis assistant, validating performance against in-house models.</li>
+            <li>Deployed ML microservices in Docker with CI/CD on AWS, cutting deployment time from days to hours.</li>
+          </ul>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-header">
+            <div class="timeline-role">Machine Learning Engineer</div>
+            <div class="timeline-meta">ICICI Bank | Hyderabad, India | Jan 2021 - Jul 2022</div>
+          </div>
+          <ul class="timeline-list">
+            <li>Built and deployed real-time fraud detection with XGBoost, reducing losses by 20 percent.</li>
+            <li>Developed an NLP pipeline with spaCy and BERT to classify support tickets, improving resolution time by 25 percent.</li>
+            <li>Introduced containerized ML deployments with Docker and model versioning, shortening integration cycles.</li>
+            <li>Partnered with data engineering and IT teams to monitor models and schedule retraining cycles.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-title">Education</div>
+      <div class="grid two">
+        <div class="card">
+          <div class="tag">Graduate</div>
+          <div class="timeline-role">Master of Science in Computer Science</div>
+          <div class="timeline-meta">University of Missouri - Kansas City | 2024</div>
+        </div>
+        <div class="card">
+          <div class="tag">Focus Areas</div>
+          <p>
+            Machine learning, natural language processing, large language models, and scalable AI deployment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">Contact</div>
+      <p class="section-lead">
+        Open to roles in applied ML, generative AI, and MLOps. Let's connect.
+      </p>
+      <div class="grid two">
+        <div class="card">
+          <div class="tag">Reach Out</div>
+          <p><strong>Email:</strong> <a href="mailto:saikarthi.n@gmail.com">saikarthi.n@gmail.com</a></p>
+          <p><strong>Phone:</strong> +1 862 846 1817</p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/saikarthiknaladala" target="_blank" rel="noreferrer">github.com/saikarthiknaladala</a></p>
+        </div>
+        <div class="card">
+          <div class="tag">Location</div>
+          <p>Apex, North Carolina, United States</p>
+          <p>Available for hybrid or remote opportunities.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>Designed by Sai Karthik</div>
+      <div>AI, ML, and Generative Systems</div>
+    </footer>
+  </div>
+</body>
+</html>
